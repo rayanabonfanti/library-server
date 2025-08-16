@@ -26,6 +26,8 @@ public class Main {
 
         System.out.println("History: ");
         libraryService.history().forEach(System.out::println);
+
+        System.out.println(libraryService.listUsers());
     }
 
     private static void modifyTimeStampToExpired(LibraryService libraryService) {
@@ -51,6 +53,7 @@ public class Main {
 
         libraryService.addUser("1", "Rayana");
         libraryService.addUser("2", "Alice");
+        libraryService.addUser("3", "Bob");
         libraryService.addUser("3", "Bob");
 
         libraryService.addBook("101", "Effective Java", "Joshua Bloch");

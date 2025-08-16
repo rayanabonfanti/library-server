@@ -30,13 +30,4 @@ public class LoanRepository {
         history.forEach(LoanRecord::checkExpiration);
         return history;
     }
-
-    public List<LoanRecord> expiredLoans() {
-        List<LoanRecord> expired = new ArrayList<>();
-        for (LoanRecord lr : history) {
-            lr.checkExpiration();
-            if (lr.isExpired()) expired.add(lr);
-        }
-        return expired;
-    }
 }
