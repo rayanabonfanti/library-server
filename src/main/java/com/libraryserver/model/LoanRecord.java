@@ -21,23 +21,10 @@ public class LoanRecord {
         this.expired = false;
     }
 
-    public String getBookId() {
-        return bookId;
-    }
-
-    public String getUserId() {
-        return userId;
-    }
-
     public Action getAction() {
         return action;
     }
 
-    public Instant getTimestamp() {
-        return timestamp;
-    }
-
-    public boolean isExpired() { return expired; }
     public void checkExpiration() {
         if (action == Action.BORROW && Instant.now().isAfter(timestamp.plus(EXPIRATION_DAYS, ChronoUnit.DAYS))) {
             this.expired = true;
